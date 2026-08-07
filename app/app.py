@@ -50,7 +50,7 @@ st.markdown("""
     .badge-good { background-color: #28a745; }
     .badge-excellent { background-color: #007bff; }
     </style>
-""", unsafe_style_html=True)
+""", unsafe_allow_html=True)
 
 # Project paths
 project_root = get_project_root()
@@ -177,9 +177,9 @@ with tab_predict:
                     )
                 
                 # Show results inside a container card
-                st.markdown("<div class='metric-card'>", unsafe_style_html=True)
+                st.markdown("<div class='metric-card'>", unsafe_allow_html=True)
                 st.markdown(f"### Predicted IMDb Rating for **{movie_name}**")
-                st.markdown(f"<span class='prediction-header'>{pred_rating:.2f} / 10</span>", unsafe_style_html=True)
+                st.markdown(f"<span class='prediction-header'>{pred_rating:.2f} / 10</span>", unsafe_allow_html=True)
                 
                 # Add category interpretation badge
                 if pred_rating < 4.0:
@@ -191,8 +191,8 @@ with tab_predict:
                 else:
                     badge_html = "<span class='badge badge-excellent'>Excellent Rating (8-10)</span>"
                     
-                st.markdown(f"**Interpretation:** {badge_html}", unsafe_style_html=True)
-                st.markdown("</div>", unsafe_style_html=True)
+                st.markdown(f"**Interpretation:** {badge_html}", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)
                 
             except Exception as e:
                 st.error(f"Error during prediction: {e}")
